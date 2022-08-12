@@ -3,7 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 
 import Header from "./components/layout/header/Header";
 import AllCardsPage from "./pages/allcards/AllCards";
-import CardPage from "./pages/CardPage";
+import CardDetailPage from "./pages/carddetails/CardDetail";
 
 function App() {
   const [questions, setQuestions] = useState([
@@ -42,7 +42,10 @@ function App() {
           exact
           element={<AllCardsPage questions={questions} />}
         />
-        <Route path="/cards/:id" element={<CardPage />} />
+        <Route
+          path="/cards/:questionId"
+          element={<CardDetailPage questions={questions} />}
+        />
       </Routes>
     </div>
   );
