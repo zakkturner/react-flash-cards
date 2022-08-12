@@ -1,7 +1,7 @@
 .header {
   width: 100%;
   height: auto;
-  background-color: blue;
+  background-color: #61dafb;
   padding: 1rem 0;
 }
 
@@ -12,6 +12,6 @@
 }
 
 .site-brand .text {
-  color: #fff;
+  color: #20232a;
   font-size: 24px;
 }
