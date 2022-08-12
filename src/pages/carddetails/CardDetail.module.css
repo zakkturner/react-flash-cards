@@ -10,6 +10,13 @@
   width: 90%;
   margin: 0 auto;
   border-radius: 25px;
+  overflow: hidden;
+}
+.cardDetail_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
 }
 .cardDetail_text_container {
   padding: 2rem 2rem;
