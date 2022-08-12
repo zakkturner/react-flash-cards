@@ -4,6 +4,7 @@ import { Link, Route, Routes } from "react-router-dom";
 import Header from "./components/layout/header/Header";
 import AllCardsPage from "./pages/allcards/AllCards";
 import CardDetailPage from "./pages/carddetails/CardDetail";
+import ProgressBar from "./components/layout/progressBar/ProgressBar";
 
 function App() {
   const [questions, setQuestions] = useState([
@@ -47,7 +48,7 @@ function App() {
       question: "What are the biggest limitations of React?",
       answer:
         "React is just a library. It is not a complete framework. It has a huge library which takes time to understand. It may be difficult for the new programmers to understand and code. React uses inline templating and JSX, which may be difficult and act as a barrier. It also makes the coding complex.",
-      level: 2,
+      level: null,
     },
     {
       id: 7,
@@ -75,6 +76,7 @@ function App() {
           element={<CardDetailPage questions={questions} />}
         />
       </Routes>
+      <ProgressBar questions={questions} />
     </div>
   );
 }
