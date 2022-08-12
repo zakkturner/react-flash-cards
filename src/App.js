@@ -12,7 +12,7 @@ function App() {
       question: " What is React? State some of its key features.",
       answer:
         "React is a clientside Javascript library developed by Facebook. Some key Features include: the virtual dom, uni-directional or one way data flow, reusuable components, and JSX",
-      level: 0,
+      level: 2,
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ function App() {
       question: "What are the lifecycle methods of React Components in detail?",
       answer:
         "Some important life cycle methods of React components are componentWillMount() componentDidMount()componentWillRecieveProps() shouldComponentUpdate()componentWillUpdate()",
-      level: 0,
+      level: 1,
     },
   ]);
   return (

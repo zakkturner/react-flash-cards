@@ -9,8 +9,10 @@ const AllCardsPage = ({ questions }) => {
       <ul className={style.allcards_list}>
         {questions.map((questionData) => (
           <HorizontalCard
+            key={questionData.id}
             id={questionData.id}
             question={questionData.question}
+            level={questionData.level}
           />
         ))}
       </ul>
