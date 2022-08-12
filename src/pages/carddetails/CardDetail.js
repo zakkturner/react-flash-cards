@@ -7,15 +7,24 @@ const CardDetailPage = ({ questions }) => {
   const { questionId } = useParams();
   // finds the matching id in the questions array prop
   const question = questions.find((question) => question.id == questionId);
-
+  const [isFlipped, setIsFlipped] = useState(false);
+  const cardFlipHandler = (e) => {
+    e.preventDefault();
+    setIsFlipped(!isFlipped);
+  };
   return (
     <div className={style.cardDetailPage}>
       <div class={style.cardDetail_container}>
         <div className={style.cardDetail_text_container}>
-          <h1 className={style.cardDetail_text}>{question.question}</h1>
+          <h1 className={style.cardDetail_text}>
+            {!isFlipped ? question.question : question.answer}
+          </h1>
         </div>
         <div className={style.cardDetail_flip_container}>
-          <button className={style.cardDetail_flipbtn}>
+          <button
+            className={style.cardDetail_flipbtn}
+            onClick={cardFlipHandler}
+          >
             <FaUndo />
           </button>
         </div>
