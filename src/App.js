@@ -3,7 +3,7 @@ import { Link, Route, Routes } from "react-router-dom";
 
 import Header from "./components/layout/header/Header";
 import AllCardsPage from "./pages/allcards/AllCards";
-import CardPage from "./pages/CardPage";
+import CardDetailPage from "./pages/carddetails/CardDetail";
 
 function App() {
   const [questions, setQuestions] = useState([
@@ -28,6 +28,34 @@ function App() {
         "Some important life cycle methods of React components are componentWillMount() componentDidMount()componentWillRecieveProps() shouldComponentUpdate()componentWillUpdate()",
       level: 1,
     },
+    {
+      id: 4,
+      question: "What does HOC mean?",
+      answer:
+        "HOC stands for higher-order component.  It is an advanced technique in React that allows us to reuse component logic. HOC is not a part of the React API, it is a pattern that emerges from React’s compositional nature.",
+      level: 1,
+    },
+    {
+      id: 5,
+      question: "What is Redux?",
+      answer:
+        "HOC stands for higher-order component.  It is an advanced technique in React that allows us to reuse component logic. HOC is not a part of the React API, it is a pattern that emerges from React’s compositional nature.",
+      level: 1,
+    },
+    {
+      id: 6,
+      question: "What are the biggest limitations of React?",
+      answer:
+        "React is just a library. It is not a complete framework. It has a huge library which takes time to understand. It may be difficult for the new programmers to understand and code. React uses inline templating and JSX, which may be difficult and act as a barrier. It also makes the coding complex.",
+      level: 2,
+    },
+    {
+      id: 7,
+      question: "Why can't browsers read JSX?",
+      answer:
+        "Browsers cannot read JSX directly because they can only understand JavaScript objects, and JSX is not a regular JavaScript object. Thus, we need to transform the JSX file into a JavaScript object using transpilers like Babel and then pass it to the browser.",
+      level: 0,
+    },
   ]);
   return (
     <div className="App">
@@ -42,7 +70,10 @@ function App() {
           exact
           element={<AllCardsPage questions={questions} />}
         />
-        <Route path="/cards/:id" element={<CardPage />} />
+        <Route
+          path="/cards/:questionId"
+          element={<CardDetailPage questions={questions} />}
+        />
       </Routes>
     </div>
   );
