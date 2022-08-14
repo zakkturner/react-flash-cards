@@ -9,7 +9,6 @@ const ProgressBar = ({ questions }) => {
     goodPercentage: null,
   });
 
-  let counts = {};
   useEffect(() => {
     // groupQuestions(questions);
     calculatePercentages(questions);
@@ -17,20 +16,12 @@ const ProgressBar = ({ questions }) => {
 
   //   Groups amount of occurences the confidence level occurs
   const calculatePercentages = (questions) => {
+    let counts = {};
     questions.forEach((question) => {
-      if (question.level === 0) {
-        counts[question.level] = counts[question.level]
-          ? counts[question.level] + 1
-          : 1;
-      } else if (question.level === 1) {
-        counts[question.level] = counts[question.level]
-          ? counts[question.level] + 1
-          : 1;
-      } else if (question.level === 2) {
-        counts[question.level] = counts[question.level]
-          ? counts[question.level] + 1
-          : 1;
-      } else {
+      counts[question.level] = counts[question.level]
+        ? counts[question.level] + 1
+        : 1;
+      if (question.level === null) {
         counts[3] = counts[3] ? counts[3] + 1 : 1;
       }
     });

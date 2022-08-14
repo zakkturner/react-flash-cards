@@ -1,10 +1,13 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Link, Route, Routes } from "react-router-dom";
 
 import Header from "./components/layout/header/Header";
 import AllCardsPage from "./pages/allcards/AllCards";
 import CardDetailPage from "./pages/carddetails/CardDetail";
 import ProgressBar from "./components/layout/progressBar/ProgressBar";
+
+export const QuestionContext = React.createContext();
+// export const ConfidenceContext = React.createContext();
 
 function App() {
   const [questions, setQuestions] = useState([
@@ -58,6 +61,12 @@ function App() {
       level: 0,
     },
   ]);
+
+  // function changeConfidence(e) {
+  //   console.log(e.target.value);
+  //   // setQuestions({});
+  // }
+
   return (
     <div className="App">
       <Header />
@@ -65,18 +74,22 @@ function App() {
       {/* ************** */}
       {/* Routes for app */}
       {/* ************** */}
-      <Routes>
-        <Route
-          path="/"
-          exact
-          element={<AllCardsPage questions={questions} />}
-        />
-        <Route
-          path="/cards/:questionId"
-          element={<CardDetailPage questions={questions} />}
-        />
-      </Routes>
-      <ProgressBar questions={questions} />
+      <QuestionContext.Provider value={questions}>
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={<AllCardsPage questions={questions} />}
+          />
+          <Route
+            path="/cards/:questionId"
+            element={<CardDetailPage questions={questions} />}
+          />
+        </Routes>
+        {/* <ConfidenceContext.Provider value={changeConfidence}> */}
+        <ProgressBar questions={questions} />
+        {/* </ConfidenceContext.Provider> */}
+      </QuestionContext.Provider>
     </div>
   );
 }

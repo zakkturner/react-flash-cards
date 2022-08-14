@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./CardDetail.module.css";
 import { FaUndo } from "react-icons/fa";
+import ConfidenceBtn from "../../components/confidence-btn/ConfidenceBtn";
 const CardDetailPage = ({ questions }) => {
   // Displays specific card based on id passed in url
   const { questionId } = useParams();
@@ -59,7 +60,11 @@ const CardDetailPage = ({ questions }) => {
           </button>
         </div>
       </div>
-      {/* {question.question} */}
+      <div class={style.confidence_button_container}>
+        <ConfidenceBtn type="bad" />
+        <ConfidenceBtn type="meh" />
+        <ConfidenceBtn type="good" />
+      </div>
     </div>
   );
 };
