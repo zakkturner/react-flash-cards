@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { useSelector } from "react-redux";
+import {} from "react-redux";
 import style from "./ConfidenceBtn.module.css";
 import { FaSmile, FaMeh, FaFrown } from "react-icons/fa";
 import { QuestionContext } from "../../App";
 
 import { changeLevel } from "../../features/questions/questionsSlice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const ConfidenceBtn = ({ type, value, questionId }) => {
   const dispatch = useDispatch();
