@@ -1,6 +1,6 @@
 import style from "./HorizontalCard.module.css";
 import { Link } from "react-router-dom";
-import { FaSmile, FaMeh, FaFrown } from "react-icons/fa";
+import { FaSmile, FaMeh, FaFrown, FaQuestion } from "react-icons/fa";
 
 const HorizontalCard = ({ question, id, level }) => {
   const levelColor = (level) => {
@@ -31,6 +31,7 @@ const HorizontalCard = ({ question, id, level }) => {
         {level === 0 && <FaFrown />}
         {level === 1 && <FaMeh />}
 
+        {level === null && <FaQuestion />}
         {level === 2 && <FaSmile />}
       </div>
     </li>
