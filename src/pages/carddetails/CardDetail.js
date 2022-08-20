@@ -3,7 +3,11 @@ import { useParams } from "react-router-dom";
 import style from "./CardDetail.module.css";
 import { FaUndo } from "react-icons/fa";
 import ConfidenceBtn from "../../components/confidence-btn/ConfidenceBtn";
-const CardDetailPage = ({ questions }) => {
+import { useDispatch, useSelector } from "react-redux";
+
+const CardDetailPage = () => {
+  const dispatch = useDispatch();
+  const { questions } = useSelector((state) => state.questions);
   // Displays specific card based on id passed in url
   const { questionId } = useParams();
   // finds the matching id in the questions array prop
@@ -61,9 +65,9 @@ const CardDetailPage = ({ questions }) => {
         </div>
       </div>
       <div class={style.confidence_button_container}>
-        <ConfidenceBtn type="bad" />
-        <ConfidenceBtn type="meh" />
-        <ConfidenceBtn type="good" />
+        <ConfidenceBtn type="bad" value="0" questionId={questionId} />
+        <ConfidenceBtn type="meh" value="1" questionId={questionId} />
+        <ConfidenceBtn type="good" value="2" questionId={questionId} />
       </div>
     </div>
   );

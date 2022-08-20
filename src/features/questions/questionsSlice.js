@@ -1,29 +1,10 @@
-import React, { useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { createSlice, current } from "@reduxjs/toolkit";
+import { useParams } from "react-router-dom";
 
-import Header from "./components/layout/header/Header";
-import AllCardsPage from "./pages/allcards/AllCards";
-import CardDetailPage from "./pages/carddetails/CardDetail";
-import ProgressBar from "./components/layout/progressBar/ProgressBar";
-
-export const QuestionContext = React.createContext();
-/*
-on vacation finish/rewatch these
-jest
-https://www.youtube.com/watch?v=3e1GHCA3GP0 
-redux
-https://www.youtube.com/watch?v=bbkBuqC1rU4
-
-1. finish redux state management
-2. finish button state change for level
-2.create unit test
-
-
-
-
-*/
-function App() {
-  const [questions, setQuestions] = useState([
+// putting in own constant because file so large.
+// may change if and express api
+const initialState = {
+  questions: [
     {
       id: 1,
       question: " What is React? State some of its key features.",
@@ -73,37 +54,35 @@ function App() {
         "Browsers cannot read JSX directly because they can only understand JavaScript objects, and JSX is not a regular JavaScript object. Thus, we need to transform the JSX file into a JavaScript object using transpilers like Babel and then pass it to the browser.",
       level: 0,
     },
-  ]);
-  /*
+  ],
+  /*   This is just an attempt to see if the percentage. not sure if will be able to work like this / may clean it up
+  
+  */
+  startPercentage: null,
+  badPercentage: null,
+  mehPercentage: null,
+  goodPercentage: null,
+};
 
- https://www.youtube.com/watch?v=bbkBuqC1rU4
+export const questionSlice = createSlice({
+  name: "questions",
+  initialState,
+  reducers: {
+    changeLevel: (state, action) => {
+      const { questionId, value } = action.payload;
 
-*/
-  return (
-    <div className="App">
-      <Header />
+      state.questions = state.questions.map((question, index) => {
+        if (questionId == question.id) {
+          return { ...question, level: parseInt(value) };
+        } else {
+          return question;
+        }
+      });
 
-      {/* ************** */}
-      {/* Routes for app */}
-      {/* ************** */}
-      <QuestionContext.Provider value={questions}>
-        <Routes>
-          <Route
-            path="/"
-            exact
-            element={<AllCardsPage questions={questions} />}
-          />
-          <Route
-            path="/cards/:questionId"
-            element={<CardDetailPage questions={questions} />}
-          />
-        </Routes>
-        {/* <ConfidenceContext.Provider value={changeConfidence}> */}
-        <ProgressBar questions={questions} />
-        {/* </ConfidenceContext.Provider> */}
-      </QuestionContext.Provider>
-    </div>
-  );
-}
+      return state;
+    },
+  },
+});
 
-export default App;
+export const { changeLevel } = questionSlice.actions;
+export default questionSlice.reducer;
