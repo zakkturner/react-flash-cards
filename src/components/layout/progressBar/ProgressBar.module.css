@@ -8,23 +8,19 @@
 }
 
 .progress_start {
-  width: 25%;
   height: 100%;
   background: gray;
 }
 .progress_bad {
-  width: 25%;
   height: 100%;
   background: #9d2235;
 }
 .progress_meh {
-  width: 25%;
   height: 100%;
   background: #ac9f3c;
 }
 
 .progress_good {
-  width: 25%;
   height: 100%;
   background: #006e33;
 }

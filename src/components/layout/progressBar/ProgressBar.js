@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./ProgressBar.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 const ProgressBar = () => {
   const { questions } = useSelector((state) => state.questions);
 
@@ -12,9 +12,8 @@ const ProgressBar = () => {
   });
 
   useEffect(() => {
-    // groupQuestions(questions);
     calculatePercentages(questions);
-  });
+  }, [questions]);
 
   //   Calculates percentages
   const calculatePercentages = (questions) => {

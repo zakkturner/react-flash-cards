@@ -1,17 +1,21 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import style from "./CardDetail.module.css";
 import { FaUndo } from "react-icons/fa";
 import ConfidenceBtn from "../../components/confidence-btn/ConfidenceBtn";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const CardDetailPage = () => {
-  const dispatch = useDispatch();
   const { questions } = useSelector((state) => state.questions);
   // Displays specific card based on id passed in url
+
   const { questionId } = useParams();
+
   // finds the matching id in the questions array prop
-  const question = questions.find((question) => question.id == questionId);
+  const question = questions.find(
+    (question) => question.id === parseInt(questionId)
+  );
+
   // Card flip logic
   const [isFlipped, setIsFlipped] = useState(false);
   const cardFlipHandler = (e) => {
@@ -69,6 +73,7 @@ const CardDetailPage = () => {
         <ConfidenceBtn type="meh" value="1" questionId={questionId} />
         <ConfidenceBtn type="good" value="2" questionId={questionId} />
       </div>
+      <Link to="/">Home</Link>
     </div>
   );
 };
