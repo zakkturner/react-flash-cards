@@ -12,9 +12,8 @@ const ProgressBar = () => {
   });
 
   useEffect(() => {
-    // groupQuestions(questions);
     calculatePercentages(questions);
-  });
+  }, [questions]);
 
   //   Calculates percentages
   const calculatePercentages = (questions) => {
