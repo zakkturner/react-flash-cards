@@ -14,21 +14,24 @@ const ProgressBar = ({ questions }) => {
     calculatePercentages(questions);
   }, []);
 
-  //   Groups amount of occurences the confidence level occurs
+  //   Calculates percentages
   const calculatePercentages = (questions) => {
     let counts = {};
     questions.forEach((question) => {
       counts[question.level] = counts[question.level]
         ? counts[question.level] + 1
         : 1;
+
       if (question.level === null) {
+        /* if this is the first null question.level 
+        add counts[3] to object and make its value one else add 1 to counts[1]*/
         counts[3] = counts[3] ? counts[3] + 1 : 1;
       }
     });
     if (!counts[3]) {
       counts = { ...counts, 3: 0 };
     }
-    console.log(counts);
+
     setPercentages({
       startPercentage: (counts[3] / questions.length) * 100,
       badPercentage: (counts[0] / questions.length) * 100,

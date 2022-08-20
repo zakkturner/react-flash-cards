@@ -1,4 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
+import { useParams } from "react-router-dom";
 
 // putting in own constant because file so large.
 // may change if and express api
@@ -65,5 +66,23 @@ const initialState = {
 
 export const questionSlice = createSlice({
   name: "questions",
-  initialState: initialState,
+  initialState,
+  reducers: {
+    changeLevel: (state, action) => {
+      const { questionId, value } = action.payload;
+
+      state.questions = state.questions.map((question, index) => {
+        if (questionId == question.id) {
+          return { ...question, level: parseInt(value) };
+        } else {
+          return question;
+        }
+      });
+
+      return state;
+    },
+  },
 });
+
+export const { changeLevel } = questionSlice.actions;
+export default questionSlice.reducer;

@@ -61,9 +61,9 @@ const CardDetailPage = ({ questions }) => {
         </div>
       </div>
       <div class={style.confidence_button_container}>
-        <ConfidenceBtn type="bad" />
-        <ConfidenceBtn type="meh" />
-        <ConfidenceBtn type="good" />
+        <ConfidenceBtn type="bad" value="0" questionId={questionId} />
+        <ConfidenceBtn type="meh" value="1" questionId={questionId} />
+        <ConfidenceBtn type="good" value="2" questionId={questionId} />
       </div>
     </div>
   );
