@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import style from "./ProgressBar.module.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 const ProgressBar = () => {
   const { questions } = useSelector((state) => state.questions);
 

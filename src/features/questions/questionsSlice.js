@@ -1,5 +1,4 @@
-import { createSlice, current } from "@reduxjs/toolkit";
-import { useParams } from "react-router-dom";
+import { createSlice } from "@reduxjs/toolkit";
 
 // putting in own constant because file so large.
 // may change if and express api
@@ -10,35 +9,35 @@ const initialState = {
       question: " What is React? State some of its key features.",
       answer:
         "React is a clientside Javascript library developed by Facebook. Some key Features include: the virtual dom, uni-directional or one way data flow, reusuable components, and JSX",
-      level: 2,
+      level: null,
     },
     {
       id: 2,
       question: " What is JSX?",
       answer:
         "JSX stands for JavaScript XML. It is a syntax extension of JavaScript and has all the properties of JavaScript. Any JavaScript expression can be used in JSX by containing it in curly braces.",
-      level: 0,
+      level: null,
     },
     {
       id: 3,
       question: "What are the lifecycle methods of React Components in detail?",
       answer:
         "Some important life cycle methods of React components are componentWillMount() componentDidMount()componentWillRecieveProps() shouldComponentUpdate()componentWillUpdate()",
-      level: 1,
+      level: null,
     },
     {
       id: 4,
       question: "What does HOC mean?",
       answer:
         "HOC stands for higher-order component.  It is an advanced technique in React that allows us to reuse component logic. HOC is not a part of the React API, it is a pattern that emerges from React’s compositional nature.",
-      level: 1,
+      level: null,
     },
     {
       id: 5,
       question: "What is Redux?",
       answer:
         "HOC stands for higher-order component.  It is an advanced technique in React that allows us to reuse component logic. HOC is not a part of the React API, it is a pattern that emerges from React’s compositional nature.",
-      level: 1,
+      level: null,
     },
     {
       id: 6,
@@ -52,7 +51,7 @@ const initialState = {
       question: "Why can't browsers read JSX?",
       answer:
         "Browsers cannot read JSX directly because they can only understand JavaScript objects, and JSX is not a regular JavaScript object. Thus, we need to transform the JSX file into a JavaScript object using transpilers like Babel and then pass it to the browser.",
-      level: 0,
+      level: null,
     },
   ],
   /*   This is just an attempt to see if the percentage. not sure if will be able to work like this / may clean it up

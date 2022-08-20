@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
 import style from "./AllCards.module.css";
 import HorizontalCard from "../../components/horizontal-card/HorizontalCard";
+import { useSelector } from "react-redux";
 
-const AllCardsPage = ({ questions }) => {
+const AllCardsPage = () => {
+  const { questions } = useSelector((state) => state.questions);
   return (
     <div className={style.allcards_page}>
       <ul className={style.allcards_list}>
