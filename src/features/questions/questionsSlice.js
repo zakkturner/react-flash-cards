@@ -71,7 +71,7 @@ export const questionSlice = createSlice({
       const { questionId, value } = action.payload;
 
       state.questions = state.questions.map((question, index) => {
-        if (questionId == question.id) {
+        if (parseInt(questionId) === question.id) {
           return { ...question, level: parseInt(value) };
         } else {
           return question;
