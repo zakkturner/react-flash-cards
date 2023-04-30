@@ -1,0 +1,43 @@
+.cardDetailPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cardDetail_container {
+  background: #fff;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+.cardDetail_header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+}
+.cardDetail_text_container {
+  padding: 2rem 2rem;
+}
+.cardDetail_text {
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+}
+.cardDetail_flip_container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+.cardDetail_flipbtn {
+  background: #61dafb;
+  border: none;
+  padding: 1rem 1rem;
+  border-radius: 50%;
+}
+.confidence_button_container {
+  margin: 1rem;
+}

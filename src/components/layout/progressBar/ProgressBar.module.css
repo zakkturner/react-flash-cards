@@ -1,0 +1,26 @@
+.progress_bar {
+  width: 50%;
+  height: 2rem;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.progress_start {
+  height: 100%;
+  background: gray;
+}
+.progress_bad {
+  height: 100%;
+  background: #9d2235;
+}
+.progress_meh {
+  height: 100%;
+  background: #ac9f3c;
+}
+
+.progress_good {
+  height: 100%;
+  background: #006e33;
+}

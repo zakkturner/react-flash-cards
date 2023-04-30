@@ -1,0 +1,28 @@
+.allcards_item {
+  min-height: 44px;
+
+  border-bottom: 1px solid #c9c9c9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.allcards_question_container {
+  padding: 2rem 1rem;
+  width: 75%;
+}
+.allcards_question a {
+  color: #000;
+  text-decoration: none;
+}
+.allcards_level_container {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #ffffff;
+}
+.allcards_level_text {
+  font-size: 10px;
+  text-align: center;
+}

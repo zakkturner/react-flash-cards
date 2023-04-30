@@ -1,0 +1,18 @@
+.header {
+  width: 100%;
+  height: auto;
+  background-color: #61dafb;
+  padding: 1rem 0;
+}
+
+.site-brand {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.site-brand .text {
+  color: #20232a;
+  font-size: 24px;
+  font-weight: 600;
+}

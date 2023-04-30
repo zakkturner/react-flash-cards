@@ -1,0 +1,11 @@
+.allcards_page {
+  width: 75%;
+  background: #fff;
+  margin: 2rem auto;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.allcards_list {
+  border-radius: 25px;
+}
